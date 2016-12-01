@@ -1,0 +1,23 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'vendor/bundle/**/*'
+    - 'Rakefile'
+
+Rails:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Exclude:
+    - 'config/initializers/**/*'
+    - 'config/environments/**/*'
+    - 'test/test_helper.rb'
+    - 'db/seeds.rb'
+    - 'config/puma.rb'
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/test_helper.rb'
