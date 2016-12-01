@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  artist: one
+  description: MyString
+  catalog_number: MyString
+  cover_uid: MyString
+
+two:
+  name: MyString
+  artist: two
+  description: MyString
+  catalog_number: MyString
+  cover_uid: MyString
