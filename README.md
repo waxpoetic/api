@@ -1,8 +1,9 @@
 # Wax Poetic API
 
 A [JSONAPI][] for the Wax Poetic Records roster. Powers the main
-http://www.waxpoeticrecords.com/ site as well as artist sites such as
-http://www.thewonderbars.com/ and http://www.rndnbass.com/.
+http://www.waxpoeticrecords.com/ catalog site as well as individual
+artist sites such as http://www.thewonderbars.com/ and
+http://www.rndnbass.com/.
 
 ## Features
 
@@ -40,10 +41,11 @@ $ curl http://waxpoetic.docker/artists.json
 {"artists":[{"id": 1,"name":"Sample Artist","bio":"Sample Bio","photo":"https://cdn.waxpoeticrecords.com/...","createdAt": "<DATE>","updatedAt": "<DATE>"}]}
 ```
 
-## Architecture
+To view the admin panel, log in to <http://waxpoetic.docker/admin> with
+the configured `:admin_username` and `:admin_password` from
+**config/secrets.yml**.
 
-At its core, the application is designed around providing its data to
-the 
+## Architecture
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

@@ -17,3 +17,5 @@
 .byebug_history
 /vendor/bundle
 tags
+.env
+**/*.DS_Store
