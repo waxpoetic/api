@@ -1,3 +1,7 @@
+#
+# services configuration for api.waxpoeticrecords.com
+#
+
 version: '2'
 
 # build the rails app from local Dockerfile
@@ -11,7 +15,9 @@ rails: &rails
   links:
     - db
     - store
+  env_file: .env
 
+# define container services
 services:
   db:
     image: postgres
