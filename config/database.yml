@@ -2,7 +2,6 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  #host: db
 
 development:
   <<: *default
@@ -15,3 +14,4 @@ test:
 production:
   <<: *default
   database: waxpoetic_production
+  host: db
