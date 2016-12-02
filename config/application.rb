@@ -23,9 +23,16 @@ module Waxpoetic
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
-    config.cdn_domain_name = [
-      'https://',
-      "files.#{Rails.application.secrets.domain_name}"
-    ].join
+
+    # Configure the CDN domain used by uploaded files.
+    config.cdn_domain_name = "https://files.#{secrets.domain_name}"
+
+    # A list of allowed origin sites that can access the API data in
+    # their web applications.
+    config.sites = %w(
+      https://*.waxpoeticrecords.com
+      https://thewonderbars.com
+      https://rndnbass.com
+    )
   end
 end
