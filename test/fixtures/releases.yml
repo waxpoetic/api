@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+wxp001:
+  name: First Release
   artist: one
-  description: MyString
-  catalog_number: MyString
-  cover_uid: MyString
+  description: First Release Description
+  catalog_number: WXP001
+  cover_uid: first.png
 
-two:
-  name: MyString
+wxp002:
+  name: Second Release
   artist: two
-  description: MyString
-  catalog_number: MyString
-  cover_uid: MyString
+  description: Second Release Description
+  catalog_number: WXP002
+  cover_uid: second.png

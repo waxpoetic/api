@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  bio: MyString
-  photo_uid: MyString
+wonderbars:
+  name: The Wonder Bars
+  bio: A live house band
+  photo_uid: kfn.jpg
 
 two:
   name: MyString

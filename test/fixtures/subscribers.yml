@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+main:
+  name: Main List Subscriber
+  email: lester.tester@example.com
+  list_id: 54321
+
+artist:
+  name: Artist List Subscriber
+  email: artist.subscriber@example.com
+  list_id: 12345
+  artist: wonderbars

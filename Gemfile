@@ -12,6 +12,7 @@ gem 'halt'
 gem 'dragonfly'
 gem 'active_model_serializers'
 gem 'ember-cli-rails'
+gem 'gibbon'
 
 group :development, :test do
   gem 'pry-byebug', platform: :mri

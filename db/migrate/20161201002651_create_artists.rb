@@ -4,6 +4,7 @@ class CreateArtists < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :bio
       t.string :photo_uid
+      t.string :mailchimp_list_id
 
       t.timestamps
     end

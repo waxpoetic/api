@@ -1,25 +1,29 @@
 # API control.
 class ApplicationController < ActionController::API
   include ControllerResources
-  include Halt
+  # include Halt
   include Pundit
 
   PROTECTED_ACTIONS = %i(create update destroy).freeze
 
-  halt ActiveRecord::RecordNotFound, with: :not_found
-  halt Pundit::Error, with: :unauthorized
-  halt User::AuthenticationError, with: :forbidden
+  # halt ActiveRecord::RecordNotFound, with: :not_found
+  # halt Pundit::Error, with: :unauthorized
+  # halt User::AuthenticationError, with: :forbidden
 
   attr_accessor :current_user
-
-  helper_method :logged_in?
-  helper_method :current_user
 
   before_action :authenticate_user!, only: PROTECTED_ACTIONS
 
   after_action :verify_authorized, except: collection_actions
   after_action :verify_policy_scoped, only: collection_actions
-  after_action :populate_headers
+
+  # Default route of the API, renders JSON information on its version.
+  def index
+    render json: {
+      name: 'Wax Poetic API',
+      version: Waxpoetic.version.to_s
+    }
+  end
 
   protected
 
