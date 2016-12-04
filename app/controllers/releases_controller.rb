@@ -2,10 +2,10 @@ class ReleasesController < ApplicationController
   resource :release
 
   def index
-    render @releases
+    respond_with @releases
   end
 
   def show
-    render @release
+    respond_with @release
   end
 end

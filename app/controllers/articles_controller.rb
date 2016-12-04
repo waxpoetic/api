@@ -2,10 +2,10 @@ class ArticlesController < ApplicationController
   resource :article
 
   def index
-    render @articles.latest
+    respond_with @articles
   end
 
   def show
-    render @article
+    respond_with @article
   end
 end
