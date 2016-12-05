@@ -11,7 +11,7 @@ class Subscriber < ApplicationRecord
   before_destroy :remove_from_list
 
   def list
-    @list ||= List.new list_id
+    @list ||= List.find list_id
   end
 
   private
@@ -25,7 +25,7 @@ class Subscriber < ApplicationRecord
   end
 
   def ensure_list_id
-    self.list_id ||= artist&.mailchimp_list_id
+    self.list_id ||= artist&.list_id
   end
 
   def list_exists

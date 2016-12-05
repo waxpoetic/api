@@ -2,47 +2,60 @@
 
 require 'digest/md5'
 
-# A Mailchimp list that users can subscribe and unsubscribe from.
+# An EmailOctopus mailing list that people can subscribe and unsubscribe from.
 class List
   # @param id [String] Mailchimp List ID
   def initialize(id)
     @id = id
-    @api_key = Rails.application.secrets.mailchimp_api_key
+  end
+
+  # Find a +List+ by the given ID or return +nil+ if none can be found.
+  #
+  # @return [List] or +nil+ when not valid.
+  def self.find(id)
+    list = new(id)
+    return unless list.valid?
+    list
+  end
+
+  # Test whether list can be found on EmailOctopus.
+  #
+  # @return [Boolean] whether +List+ is valid
+  def valid?
+    list.present?
+  rescue EmailOctopus::Error => exception
+    Rails.logger.error exception.message
+    false
   end
 
   # Subscribe someone to the list.
   #
   # @param name [String] Name of the person being subscribed.
   # @param email [String] Valid email address.
-  # @return [Boolean] whether subscription was successful.
+  # @return [String] Contact ID for future requests.
+  # @throw [EmailOctopus::API::Error] when an error occurs
   def subscribe(name: '', email: '')
-    list.members.create(
-      body: {
-        email_address: email,
-        status: 'subscribed',
-        merge_fields: {
-          NAME: name
-        }
-      }
-    )
+    contact = Contact.new name: name, email: email
+    record.contacts.create(contact.attributes).id
   end
 
   # Unsubscribe an email address from the list.
   #
   # @param email [String] Valid email address.
   # @return [Boolean] whether unsubscription was successful.
-  def unsubscribe(email)
-    member_id = Digest::MD5.digest(email.downcase)
-    list.members(member_id).update(body: { status: 'unsubscribed' })
+  # @throw [EmailOctopus::API::Error] when an error occurs
+  def unsubscribe(id)
+    record.contacts.find(id).destroy
   end
 
   private
 
-  def list
-    @list ||= gibbon.lists(id)
-  end
-
-  def gibbon
-    @gibbon ||= Gibbon::Request.new api_key: @api_key
+  # Finds an +EmailOctopus+ list by the given ID.
+  #
+  # @private
+  # @return [EmailOctopus::List] API-driven model for existing list
+  # @throws [EmailOctopus::API::Error::NotFound] when it cannot be found.
+  def record
+    @list ||= EmailOctopus::List.find id
   end
 end

@@ -19,7 +19,7 @@ class SubscriberTest < ActiveSupport::TestCase
     @subscriber.artist = @artist
 
     assert_valid @subscriber
-    assert_equal @subscriber.list_id, @artist.mailchimp_list_id
+    assert_equal @subscriber.list_id, @artist.list_id
   end
 
   test 'invalid when no list_id exists' do

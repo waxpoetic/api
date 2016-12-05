@@ -4,9 +4,10 @@ class AddSubscriberJob < ApplicationJob
   queue_as :default
 
   def perform(subscriber)
-    subscriber.list.subscribe(
-      name: subscriber.name,
-      email: subscriber.email
+    subscriber.update(
+      contact_id: subscriber.list.subscribe(
+        subscriber.attributes.slice(:name, :email)
+      )
     )
   end
 end
