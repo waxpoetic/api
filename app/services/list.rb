@@ -4,6 +4,8 @@ require 'digest/md5'
 
 # An EmailOctopus mailing list that people can subscribe and unsubscribe from.
 class List
+  attr_reader :id
+
   # @param id [String] Mailchimp List ID
   def initialize(id)
     @id = id
@@ -16,6 +18,11 @@ class List
     list = new(id)
     return unless list.valid?
     list
+  end
+
+  def self.create(params = {})
+    list = EmailOctopus::List.create(params)
+    new(list.id)
   end
 
   # Test whether list can be found on EmailOctopus.
@@ -36,7 +43,7 @@ class List
   # @throw [EmailOctopus::API::Error] when an error occurs
   def subscribe(name: '', email: '')
     contact = Contact.new name: name, email: email
-    record.contacts.create(contact.attributes).id
+    record.create_contact(contact.attributes).id
   end
 
   # Unsubscribe an email address from the list.
