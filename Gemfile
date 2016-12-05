@@ -12,7 +12,7 @@ gem 'halt'
 gem 'dragonfly'
 gem 'active_model_serializers'
 gem 'ember-cli-rails'
-gem 'email_octopus', path: '../email_octopus'
+gem 'email_octopus'
 
 group :development, :test do
   gem 'pry-byebug', platform: :mri
