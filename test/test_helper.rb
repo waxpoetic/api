@@ -10,3 +10,15 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+class ActionDispatch::IntegrationTest
+  protected
+
+  def json
+    JSON.parse(body).deep_symbolize_keys
+  end
+end
+
+class DocumentationTest < ActiveSupport::TestCase
+  i_suck_and_my_tests_are_order_dependent!
+end
