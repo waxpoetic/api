@@ -33,14 +33,10 @@ class ApplicationController < ActionController::API
   end
 
   def model
-    super.tap do |record|
-      authorize record
-    end
+    authorize super
   end
 
   def collection
-    super.tap do |records|
-      policy_scope records
-    end
+    policy_scope super
   end
 end
