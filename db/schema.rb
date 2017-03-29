@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,59 +12,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201040019) do
-
+ActiveRecord::Schema.define(version: 20_161_201_040_019) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "articles", force: :cascade do |t|
-    t.string   "title"
-    t.string   "body"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_articles_on_user_id", using: :btree
+  create_table 'articles', force: :cascade do |t|
+    t.string   'title'
+    t.string   'body'
+    t.integer  'user_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_articles_on_user_id', using: :btree
   end
 
-  create_table "artists", force: :cascade do |t|
-    t.string   "name"
-    t.string   "bio"
-    t.string   "photo_uid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'artists', force: :cascade do |t|
+    t.string   'name'
+    t.string   'bio'
+    t.string   'photo_uid'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "releases", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "artist_id"
-    t.string   "description"
-    t.string   "catalog_number"
-    t.string   "cover_uid"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["artist_id"], name: "index_releases_on_artist_id", using: :btree
+  create_table 'releases', force: :cascade do |t|
+    t.string   'name'
+    t.integer  'artist_id'
+    t.string   'description'
+    t.string   'catalog_number'
+    t.string   'cover_uid'
+    t.datetime 'created_at',     null: false
+    t.datetime 'updated_at',     null: false
+    t.index ['artist_id'], name: 'index_releases_on_artist_id', using: :btree
   end
 
-  create_table "tracks", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "number"
-    t.integer  "release_id"
-    t.string   "preview_uid"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["release_id"], name: "index_tracks_on_release_id", using: :btree
+  create_table 'tracks', force: :cascade do |t|
+    t.string   'name'
+    t.integer  'number'
+    t.integer  'release_id'
+    t.string   'preview_uid'
+    t.datetime 'created_at',  null: false
+    t.datetime 'updated_at',  null: false
+    t.index ['release_id'], name: 'index_tracks_on_release_id', using: :btree
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password"
-    t.string   "password_confirmation"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+  create_table 'users', force: :cascade do |t|
+    t.string   'name'
+    t.string   'email'
+    t.string   'password'
+    t.string   'password_confirmation'
+    t.datetime 'created_at',            null: false
+    t.datetime 'updated_at',            null: false
   end
 
-  add_foreign_key "articles", "users"
-  add_foreign_key "releases", "artists"
-  add_foreign_key "tracks", "releases"
+  add_foreign_key 'articles', 'users'
+  add_foreign_key 'releases', 'artists'
+  add_foreign_key 'tracks', 'releases'
 end

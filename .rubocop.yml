@@ -16,8 +16,20 @@ Metrics/LineLength:
     - 'config/environments/**/*'
     - 'test/test_helper.rb'
     - 'db/seeds.rb'
+    - 'db/schema.rb'
     - 'config/puma.rb'
 
 Style/ClassAndModuleChildren:
   Exclude:
     - 'test/test_helper.rb'
+
+# Offense count: 3
+# Configuration parameters: CountComments, ExcludedMethods.
+Metrics/BlockLength:
+  Max: 46
+
+# Offense count: 2
+Rails/FilePath:
+  Exclude:
+    - 'config/environments/development.rb'
+    - 'config/initializers/dragonfly.rb'

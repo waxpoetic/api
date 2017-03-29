@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # API control.
 class ApplicationController < ActionController::API
   include ControllerResources
