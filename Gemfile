@@ -12,6 +12,7 @@ gem 'halt'
 gem 'dragonfly'
 gem 'active_model_serializers'
 gem 'ember-cli-rails'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem 'pry-byebug', platform: :mri
@@ -19,7 +20,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'listen', '~> 3.0.5'
+  gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
@@ -29,5 +32,3 @@ group :production do
   gem 'redis-rails'
   gem 'redis-rack-cache'
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
