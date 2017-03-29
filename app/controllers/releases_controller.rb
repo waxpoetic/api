@@ -4,10 +4,10 @@ class ReleasesController < ApplicationController
   resource :release
 
   def index
-    render json: @release
+    respond_with @releases
   end
 
   def show
-    render json: @release
+    render @release
   end
 end

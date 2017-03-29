@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  artist: one
-  description: MyString
-  catalog_number: MyString
-  cover_uid: MyString
+wxp007:
+  name: The Wonder bars
+  artist_id: 1
+  description: Debut LP by The Wonder Bars
+  catalog_number: WXP007
+  cover_uid: cover.jpg
 
 two:
   name: MyString

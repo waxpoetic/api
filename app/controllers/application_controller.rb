@@ -10,21 +10,21 @@ class ApplicationController < ActionController::API
 
   halt ActiveRecord::RecordNotFound, with: :not_found
   halt Pundit::Error, with: :unauthorized
-  halt User::AuthenticationError, with: :forbidden
+  halt LoginError, with: :forbidden
 
   attr_accessor :current_user
 
   before_action :authenticate_user!, only: PROTECTED_ACTIONS
 
-  protected
+  respond_to :json
 
-  def logged_in?
-    current_user.present?
-  end
+  protected
 
   def authenticate_user!
     authenticate_or_request_with_http_token do |token, options|
-      self.current_user = User.authenticate! token: token, **options
+      login = Login.new token: token, email: options['email']
+      raise LoginError unless login.valid?
+      self.current_user = login.user
     end
   end
 end

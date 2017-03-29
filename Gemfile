@@ -20,6 +20,7 @@ gem 'rails', '~> 5.0.2'
 gem 'redis', '~> 3.0'
 gem 'responders'
 gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
+gem 'bcrypt'
 
 group :development, :test do
   gem 'pry-byebug', platform: :mri

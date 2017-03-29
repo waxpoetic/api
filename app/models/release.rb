@@ -1,12 +1,11 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: releases
 #
 #  id             :integer          not null, primary key
 #  name           :string
-#  artist_id      :integer
+#  artist_id      :uuid             not null
 #  description    :string
 #  catalog_number :string
 #  cover_uid      :string
@@ -16,10 +15,6 @@
 # Indexes
 #
 #  index_releases_on_artist_id  (artist_id)
-#
-# Foreign Keys
-#
-#  fk_rails_1b6ae5343f  (artist_id => artists.id)
 #
 
 class Release < ApplicationRecord

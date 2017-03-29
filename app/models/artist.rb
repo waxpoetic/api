@@ -1,10 +1,9 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: artists
 #
-#  id         :integer          not null, primary key
+#  id         :uuid             not null, primary key
 #  name       :string
 #  bio        :string
 #  photo_uid  :string
