@@ -12,9 +12,6 @@ class ApplicationController < ActionController::API
 
   attr_accessor :current_user
 
-  helper_method :logged_in?
-  helper_method :current_user
-
   before_action :authenticate_user!, only: PROTECTED_ACTIONS
 
   after_action :verify_authorized, except: collection_actions
