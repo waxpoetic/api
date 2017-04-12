@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329041403) do
+ActiveRecord::Schema.define(version: 20170412022912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,21 @@ ActiveRecord::Schema.define(version: 20170329041403) do
     t.string   "photo_uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string   "imageable_type"
+    t.integer  "imageable_id"
+    t.integer  "position"
+    t.string   "purpose"
+    t.string   "file_uid"
+    t.string   "file_name"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["file_uid"], name: "index_images_on_file_uid", using: :btree
+    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id", using: :btree
+    t.index ["position"], name: "index_images_on_position", using: :btree
+    t.index ["purpose"], name: "index_images_on_purpose", using: :btree
   end
 
   create_table "releases", force: :cascade do |t|

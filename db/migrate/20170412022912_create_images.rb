@@ -1,10 +1,11 @@
 class CreateImages < ActiveRecord::Migration[5.0]
   def change
     create_table :images do |t|
-      t.references :imageable, foreign_key: true
-      t.string :position
-      t.string :purpose
-      t.string :file_uid
+      t.references :imageable, polymorphic: true
+      t.integer :position, index: true
+      t.string :purpose, index: true
+      t.string :file_uid, index: true, unique: true
+      t.string :file_name
 
       t.timestamps
     end
