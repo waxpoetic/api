@@ -21,7 +21,12 @@ class Release < ApplicationRecord
   belongs_to :artist
 
   has_many :tracks
+  has_many :images, as: :imageable
 
   validates :name, presence: true
   validates :catalog_number, presence: true
+
+  def cover_image
+    images.cover.first
+  end
 end

@@ -40,4 +40,5 @@ group :production do
   gem 'redis-rack-cache'
   gem 'redis-rails'
   gem 'sidekiq'
+  gem 'dragonfly-s3_data_store'
 end

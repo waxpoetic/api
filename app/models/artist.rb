@@ -13,6 +13,11 @@
 
 class Artist < ApplicationRecord
   has_many :releases
+  has_many :images, as: :imageable
 
   validates :name, presence: true
+
+  def profile_image
+    images.find_by purpose: 'profile'
+  end
 end
