@@ -10,24 +10,23 @@ class ArtistsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'returns all artists' do
-    get '/artists'
+    get '/artists.json'
 
     assert_equal 200, status
-    refute_empty json[:events]
+    refute_empty response
   end
 
   test 'returns all artists matching name' do
-    get "/artists?name=#{@artist.name}"
+    get "/artists.json?name=#{@artist.name}"
 
     assert_equal 200, status
-    refute_empty json[:artists]
-    assert_equal @artist.id, json[:artists].first[:id]
+    assert_equal @artist.id, response[:data][0][:id]
   end
 
   test 'returns single artist matching id' do
-    get "/artists/#{@artist.id}"
+    get "/artists/#{@artist.id}.json"
 
     assert_equal 200, status
-    assert_equal @artist.name, json[:artist][:name]
+    assert_equal @artist.name, response[:data][:attributes][:name]
   end
 end

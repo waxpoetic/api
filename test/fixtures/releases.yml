@@ -2,14 +2,7 @@
 
 wxp007:
   name: The Wonder bars
-  artist_id: 1
+  artist: wonderbars
   description: Debut LP by The Wonder Bars
   catalog_number: WXP007
   cover_uid: cover.jpg
-
-two:
-  name: MyString
-  artist: two
-  description: MyString
-  catalog_number: MyString
-  cover_uid: MyString

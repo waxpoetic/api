@@ -5,7 +5,7 @@ wonderbars:
   bio: Live House Music
   photo_uid: wonderbars.jpg
 
-two:
-  name: MyString
-  bio: MyString
-  photo_uid: MyString
+rnd:
+  name: Research and Development
+  bio: who even knows anymore
+  photo_uid: rnd.jpg

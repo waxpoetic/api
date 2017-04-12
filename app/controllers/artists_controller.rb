@@ -4,10 +4,10 @@ class ArtistsController < ApplicationController
   resource :artist
 
   def index
-    render json: @artists
+    respond_with @artists
   end
 
   def show
-    render json: @artist
+    respond_with @artist
   end
 end

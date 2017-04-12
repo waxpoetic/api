@@ -27,4 +27,14 @@ class ApplicationController < ActionController::API
       self.current_user = login.user
     end
   end
+
+  def current_artist
+    @current_artist ||= Artist.find params[:artist_id]
+  rescue ActiveRecord::RecordNotFound
+  end
+
+  def collection
+    return super unless current_artist.present?
+    current_artist.public_send collection_name
+  end
 end

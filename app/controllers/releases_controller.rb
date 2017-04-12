@@ -8,6 +8,6 @@ class ReleasesController < ApplicationController
   end
 
   def show
-    render @release
+    respond_with @release
   end
 end

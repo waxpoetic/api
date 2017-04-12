@@ -3,11 +3,11 @@
 one:
   name: MyString
   number: 1
-  release: one
+  release: wxp007
   preview_uid: MyString
 
 two:
   name: MyString
   number: 1
-  release: two
+  release: wxp007
   preview_uid: MyString
