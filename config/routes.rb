@@ -10,4 +10,6 @@ Rails.application.routes.draw do
     resources :tracks
     resources :releases
   end
+
+  root to: redirect('/docs')
 end
