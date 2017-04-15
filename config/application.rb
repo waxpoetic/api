@@ -21,6 +21,8 @@ Bundler.require(*Rails.groups)
 module Waxpoetic
   # Web application powering waxpoeticrecords.com
   class Application < Rails::Application
+    config.version = '0.0.1'
+
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.

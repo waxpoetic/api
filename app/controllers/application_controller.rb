@@ -29,12 +29,15 @@ class ApplicationController < ActionController::API
   end
 
   def current_artist
-    @current_artist ||= Artist.find params[:artist_id]
-  rescue ActiveRecord::RecordNotFound
+    @current_artist ||= Artist.find! current_artist_id
   end
 
   def collection
     return super unless current_artist.present?
     current_artist.public_send collection_name
+  end
+
+  def current_artist_id
+    params[:artist_id] || headers['X-Artist']
   end
 end

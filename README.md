@@ -1,71 +1,50 @@
 # Wax Poetic API
 
-A [JSONAPI][] for the Wax Poetic Records roster. Powers the main
-http://www.waxpoeticrecords.com/ catalog site as well as individual
-artist sites such as http://www.thewonderbars.com/ and
-http://www.rndnbass.com/.
+This is the public API for Wax Poetic Records, a record label
+specializing in soulful electronic music. It wraps a database that
+contains our system of record for the entire business, and this API
+provides the public representations of those records for both public and
+private use.
 
-## Features
+Currently, the API is being used to power [the catalog site][] as well
+as [sites for individual artists][].
 
-* Management of artist roster and release catalog
-* Custom top-level pages for handwritten content
-* Blogging system for posting and promoting new articles
-* Comments system for the blog articles
-* Open and documented [JSONAPI][] for artist sites
+## Getting Started
+
+
 
 ## Requirements
 
-To develop on this application, please make sure you have [Docker][]
-installed. You can install either Docker for Mac (on macOS) or if you
-run any other system, the Docker Toolbox.
+Make sure you have [Ruby 2.3.1][] and [PostgreSQL 9][] installed before
+proceeding.
 
 ## Setup
 
 Clone this repository:
 
 ```bash
-$ git clone https://github.com/waxpoetic/api.git
+$ git clone https://github.com/waxpoetic/api.git waxpoetic-api
+$ cd waxpoetic-api
 ```
 
 Install services:
 
 ```bash
-$ docker-compose up
+$ ./bin/setup
 ```
 
-Make requests to <http://waxpoetic.docker> and ensure the seed artist
-gets returned:
+Start the server:
 
 ```bash
-$ curl http://waxpoetic.docker/artists.json
-{"artists":[{"id": 1,"name":"Sample Artist","bio":"Sample Bio","photo":"https://cdn.waxpoeticrecords.com/...","createdAt": "<DATE>","updatedAt": "<DATE>"}]}
+$ ./bin/rails server
 ```
 
-To view the admin panel, log in to <http://waxpoetic.docker/admin> with
+Make requests to <http://localhost:3000/artists.json>. Here's what gets returned:
+
+```json
+{"data":[{"id": 1,"attributes":{"name":"Sample Artist","bio":"Sample Bio","photo":"https://cdn.waxpoeticrecords.com/...","createdAt": "<DATE>","updatedAt": "<DATE>"}}]}
+```
+
+To view the admin panel, log in to <http://localhost:3000/admin> with
 the configured `:admin_username` and `:admin_password` from
 **config/secrets.yml**.
-
-## Architecture
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

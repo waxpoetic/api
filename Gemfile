@@ -21,11 +21,11 @@ gem 'redis', '~> 3.0'
 gem 'responders'
 gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
 gem 'bcrypt'
+gem 'apipie-rails'
 
 group :development, :test do
   gem 'pry-byebug', platform: :mri
   gem 'pry-rails', platform: :mri
-  gem 'minitest-apidoc', github: 'lauri/minitest-apidoc', ref: 'fa8553ce62eeeb0b226b226ae212c5031e1d2c26'
 end
 
 group :development do
