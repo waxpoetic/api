@@ -3,13 +3,12 @@
 class ArticlesController < ApplicationController
   resource :article
 
-  api :GET, 'articles', 'List all articles'
+  api! 'List all articles'
   def index
     respond_with @articles
   end
 
-  api :GET, 'articles/:id', 'View a single article'
-  param :id, :number, required: true
+  api! 'View a single article'
   def show
     respond_with @article
   end

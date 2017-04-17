@@ -3,13 +3,12 @@
 class ReleasesController < ApplicationController
   resource :release
 
-  api :GET, 'releases', 'List all releases by all artists'
+  api! 'List all releases'
   def index
     respond_with @releases
   end
 
-  api :GET, 'releases/:id', 'Show a single release details'
-  param :id, :number, required: true
+  api! 'Show a single release details'
   def show
     respond_with @release
   end

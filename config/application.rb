@@ -28,6 +28,8 @@ module Waxpoetic
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    config.api_version = '1.0'
+
     # Configure the CDN domain used by uploaded files.
     config.cdn_domain_name = "https://files.#{secrets.domain_name}"
 

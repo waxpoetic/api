@@ -22,6 +22,7 @@ gem 'responders'
 gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
 gem 'bcrypt'
 gem 'apipie-rails'
+gem 'maruku'
 
 group :development, :test do
   gem 'pry-byebug', platform: :mri

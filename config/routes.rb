@@ -5,11 +5,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :tracks
   resources :releases
-  resources :artists do
-    resources :articles
-    resources :tracks
-    resources :releases
-  end
+  resources :artists
 
   root to: redirect('/docs')
 end
