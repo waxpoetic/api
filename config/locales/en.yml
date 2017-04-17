@@ -24,3 +24,5 @@ en:
     errors:
       descriptions: test
       messages: test
+  apipie:
+    api_documentation: Wax Poetic Records API
