@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :tracks
   resources :releases
   resources :artists
+  resources :images
 
   root to: redirect('/docs')
 end
