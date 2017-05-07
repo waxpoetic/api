@@ -21,6 +21,7 @@ Bundler.require(*Rails.groups)
 module Waxpoetic
   # Web application powering waxpoeticrecords.com
   class Application < Rails::Application
+    config.name = 'Wax Poetic Records API'
     config.version = '0.0.1'
 
     # Only loads a smaller set of middleware suitable for API only apps.

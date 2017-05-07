@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412022912) do
+ActiveRecord::Schema.define(version: 20170507182903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,19 @@ ActiveRecord::Schema.define(version: 20170412022912) do
     t.string   "photo_uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "location"
+    t.string   "facebook_url"
+    t.string   "tickets_url"
+    t.datetime "starts_at"
+    t.datetime "open_at"
+    t.uuid     "artist_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["artist_id"], name: "index_events_on_artist_id", using: :btree
   end
 
   create_table "images", force: :cascade do |t|

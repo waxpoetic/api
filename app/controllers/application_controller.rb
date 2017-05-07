@@ -21,11 +21,13 @@ class ApplicationController < ActionController::API
   protected
 
   def authenticate_user!
-    authenticate_or_request_with_http_token do |token, options|
+    authenticate_or_request_with_http_token app_name do |token, options|
       login = Login.new token: token, email: options['email']
       raise LoginError unless login.valid?
       self.current_user = login.user
     end
+
+    render status: :unauthorized and return unless current_user.present?
   end
 
   def current_artist
@@ -38,6 +40,10 @@ class ApplicationController < ActionController::API
   end
 
   def current_artist_id
-    params[:artist_id] || headers['X-Artist']
+    params[:artist_id] || request.headers['Artist']
+  end
+
+  def app_name
+    Rails.application.config.name
   end
 end

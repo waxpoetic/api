@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
+  resource :image, ancestor: :current_artist
+
   def index
-    @images = current_artist.images
     respond_with @images
   end
 end
