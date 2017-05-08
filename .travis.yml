@@ -2,5 +2,10 @@ language: ruby
 rvm: 2.3.1
 install: bin/setup
 script: bin/rails test
-
-# TODO: Deploy 'master' to api.waxpoeticrecords.com
+deploy:
+  provider: heroku
+  api_key:
+    secure: iG5k1sTsCs7EmWPqvr4F+GmgaLDc02m2+3tX2WH3uu7SnmFUMN2JQeTGzHJ3fPq4tTKBCwj6FQooVxScsa2+64oqm7s6EF16jM3FWnIEm7i01w7OhQuYaS5skqAqsvclVigaMZ1ln9Lcaip+IGms4IF8C/6DujaeIbJib9zixeMI46aMe7DFwTmae29cxAy6qpkE1PxoY8Mzf01CHxvjPatz1ESAGn/xByHpTHpZ9pxM0MBsSGI/WPfDkbvXR4zQwxnKzmNjADrlS9W3Me9gNho+ePIKtmyAeielwNmRuWx5hUpbptE4nsDjkJwHQum2QSO73yCLRJ8dbN09KQKRz4NCBSUj+qfiN+S7u855dQtP5WYv0fW59saoJAb24wW1lRVwjHIajgUPLZe+U7Pwzi0WdCHL2nJVYB6WQWs3NePKfKieQNyFXofnpsl5tlwj45Y6tfioNQffE9YDE+O5u+Hf+lKwkpmaQOMxoaA9bMjP6oaDHWSkKhW11EICuslU9Xp11mXQBzftuExPZIGgz3xttHgbNpzlEVTzcm1C28Yg7JvgoEyJwtpVw12Gw4m9lYKJIUPKl0T7s48/HREVOX2C8iD0bPgtENdh2YNIVUoOvP5LSasdP6cXgWNPRcm9B/GBOZEpy+dm+AUAGtc/o4EinwHd1D7RNuGdpRmg//s=
+  app: waxpoetic-api
+  on:
+    repo: waxpoetic/api
