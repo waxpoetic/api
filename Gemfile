@@ -42,4 +42,5 @@ group :production do
   gem 'redis-rails'
   gem 'sidekiq'
   gem 'dragonfly-s3_data_store'
+  gem 'newrelic_rpm'
 end
