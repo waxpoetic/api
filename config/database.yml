@@ -12,6 +12,4 @@ test:
   database: waxpoetic_test
 
 production:
-  <<: *default
-  database: waxpoetic_production
-  host: db
+  url: <%= ENV['DATABASE_URL'] %>
