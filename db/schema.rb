@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170507182903) do
+ActiveRecord::Schema.define(version: 20170509225149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 20170507182903) do
     t.string   "name"
     t.string   "bio"
     t.string   "photo_uid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "youtube_playlist_id"
+    t.string   "starting_youtube_video_id"
   end
 
   create_table "events", force: :cascade do |t|
