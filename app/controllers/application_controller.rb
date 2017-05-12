@@ -14,11 +14,15 @@ class ApplicationController < ActionController::API
 
   attr_accessor :current_user
 
-  before_action :authenticate_user!, only: PROTECTED_ACTIONS
+  before_action :authenticate_user!, if: :action_protected?
 
   respond_to :json
 
   protected
+
+  def action_protected?
+    PROTECTED_ACTIONS.include? params[:action]
+  end
 
   def authenticate_user!
     authenticate_or_request_with_http_token app_name do |token, options|
