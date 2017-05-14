@@ -9,10 +9,6 @@ private use.
 Currently, the API is being used to power [the catalog site][] as well
 as [sites for individual artists][].
 
-## Getting Started
-
-
-
 ## Requirements
 
 Make sure you have [Ruby 2.3.1][] and [PostgreSQL 9][] installed before
@@ -39,6 +35,8 @@ Start the server:
 $ ./bin/rails server
 ```
 
+## Usage
+
 Make requests to <http://localhost:3000/artists.json>. Here's what gets returned:
 
 ```json
@@ -48,3 +46,13 @@ Make requests to <http://localhost:3000/artists.json>. Here's what gets returned
 To view the admin panel, log in to <http://localhost:3000/admin> with
 the configured `:admin_username` and `:admin_password` from
 **config/secrets.yml**.
+
+## Development
+
+Run tests before contributing:
+
+    rails test
+
+You can also run RuboCop to assure you don't have any style failures:
+
+    rails lint
