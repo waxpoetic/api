@@ -3,6 +3,6 @@ class EventSerializer < ActiveModel::Serializer
   has_one :artist
 
   def image
-    object.image.url
+    object.image.thumb('320x240').url
   end
 end
