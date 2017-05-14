@@ -21,14 +21,15 @@ Bundler.require(*Rails.groups)
 module Waxpoetic
   # Web application powering waxpoeticrecords.com
   class Application < Rails::Application
+    # Cosmetic name of this application
     config.name = 'Wax Poetic Records API'
-    config.version = '0.0.1'
 
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # Version of the API
     config.api_version = '1.0'
 
     # Configure the CDN domain used by uploaded files.

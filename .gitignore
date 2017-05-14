@@ -23,3 +23,6 @@ tags
 
 # Ignore generated uploads
 public/system
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key
