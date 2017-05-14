@@ -23,6 +23,10 @@
 class Image < ApplicationRecord
   belongs_to :imageable, polymorphic: true
 
+  before_validation :generate_position
+
+  validates :position, presence: true, numericality: true
+
   dragonfly_accessor :file
 
   def method_missing(method, *arguments)
@@ -32,5 +36,15 @@ class Image < ApplicationRecord
 
   def respond_to_missing?(method, include_private = false)
     file&.respond_to?(method) || super
+  end
+
+  private
+
+  def generate_position
+    self.position ||= last_position + 1
+  end
+
+  def last_position
+    imageable.images.order(:position).pluck(:position).last
   end
 end
