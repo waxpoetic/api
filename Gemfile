@@ -16,7 +16,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'pundit'
 gem 'rack-cors'
-gem 'rails', '~> 5.0.2'
+gem 'rails', '~> 5.1'
 gem 'redis', '~> 3.0'
 gem 'responders'
 gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)

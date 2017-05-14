@@ -9,6 +9,7 @@ Dragonfly.app.configure do
   secret Rails.application.secrets.dragonfly_secret_key_base
 
   url_format '/media/:job/:name'
+  url_host Rails.application.secrets.domain_name
 
   if Rails.application.secrets.s3.present?
     datastore :s3, Rails.application.secrets.s3.symbolize_keys

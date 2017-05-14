@@ -11,6 +11,7 @@
 #  file_name      :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  caption        :string
 #
 # Indexes
 #
@@ -45,7 +46,6 @@ class Image < ApplicationRecord
   end
 
   def last_position
-    return 0 unless imageable&.images&.any?
-    imageable.images.order(:position).pluck(:position).last
+    imageable.images.order(:position).pluck(:position).last || 0
   end
 end

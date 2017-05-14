@@ -16,6 +16,7 @@
 class Artist < ApplicationRecord
   has_many :releases
   has_many :images, as: :imageable
+  has_many :events
 
   validates :name, presence: true
 

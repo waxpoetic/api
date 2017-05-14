@@ -27,4 +27,6 @@ class Track < ApplicationRecord
   validates :name, presence: true
 
   scope :by_number, -> { order :number }
+
+  dragonfly_accessor :preview
 end

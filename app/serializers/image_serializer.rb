@@ -1,7 +1,7 @@
 class ImageSerializer < ActiveModel::Serializer
-  attributes :id, :position, :purpose
+  attributes :id, :position, :purpose, :file, :caption
 
   def file
-    object.file_url
+    object.file.url
   end
 end

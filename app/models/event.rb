@@ -20,6 +20,7 @@
 
 class Event < ApplicationRecord
   belongs_to :artist, required: false
+  belongs_to :image, required: false
 
   validates :name, presence: true
   validates :location, presence: true
