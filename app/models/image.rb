@@ -45,6 +45,7 @@ class Image < ApplicationRecord
   end
 
   def last_position
+    return 0 unless imageable&.images&.any?
     imageable.images.order(:position).pluck(:position).last
   end
 end
