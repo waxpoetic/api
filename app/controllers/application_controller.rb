@@ -15,10 +15,15 @@ class ApplicationController < ActionController::API
   attr_accessor :current_user
 
   before_action :authenticate_user!, if: :action_protected?
+  before_action :force_json
 
   respond_to :json
 
   protected
+
+  def force_json
+    request.format = :json
+  end
 
   def action_protected?
     PROTECTED_ACTIONS.include? params[:action]
