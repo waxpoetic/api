@@ -6,7 +6,6 @@ class CreateArtists < ActiveRecord::Migration[5.0]
     create_table :artists, id: :uuid do |t|
       t.string :name
       t.string :bio
-      t.string :photo_uid
 
       t.timestamps
     end

@@ -7,4 +7,8 @@ class ReleaseSerializer < ActiveModel::Serializer
   def images
     object.images.map(&:url)
   end
+
+  def id
+    object.to_param
+  end
 end
