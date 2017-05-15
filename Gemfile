@@ -39,6 +39,7 @@ group :development do
 end
 
 group :production do
+  gem 'rack-cache', require: 'rack/cache'
   gem 'redis-rack-cache'
   gem 'redis-rails'
   gem 'sidekiq'
