@@ -23,6 +23,7 @@ gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
 gem 'bcrypt'
 gem 'apipie-rails'
 gem 'maruku'
+gem 'administrate', github: 'tiagoamaro/administrate', branch: 'allow-rails-5-1'
 
 group :development, :test do
   gem 'pry-byebug', platform: :mri

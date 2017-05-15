@@ -1,8 +1,21 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :events
+  namespace :admin do
+    resources :articles
+    resources :artists
+    resources :events
+    resources :images
+    resources :releases
+    resources :tracks
+    resources :users
+
+    root to: "articles#index"
+  end
+
   apipie
+
+  resources :events
   resources :articles
   resources :tracks
   resources :releases
