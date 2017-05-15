@@ -8,7 +8,6 @@
 #  artist_id      :uuid             not null
 #  description    :string
 #  catalog_number :string
-#  cover_uid      :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #

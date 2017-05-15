@@ -12,4 +12,8 @@ class ReleasesController < ApplicationController
   def show
     respond_with @release
   end
+
+  def model
+    model_class.find_by catalog_number: params[:id]&.upcase
+  end
 end
