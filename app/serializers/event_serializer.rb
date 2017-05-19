@@ -3,6 +3,7 @@ class EventSerializer < ActiveModel::Serializer
   has_one :artist
 
   def image
+    return unless object.image.present?
     object.image.thumb('320x240').url
   end
 end
