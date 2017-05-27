@@ -9,9 +9,11 @@ private use.
 Currently, the API is being used to power [the catalog site][] as well
 as [sites for individual artists][].
 
+
+
 ## Requirements
 
-Make sure you have [Ruby 2.3.1][] and [PostgreSQL 9][] installed before
+Make sure you have [Ruby][] **2.3.1** and [PostgreSQL][] **9.x** installed before
 proceeding.
 
 ## Setup
@@ -56,3 +58,8 @@ Run tests before contributing:
 You can also run RuboCop to assure you don't have any style failures:
 
     rails lint
+
+[the catalog site]: https://waxpoeticrecords.com
+[sites for individual artists]: https://thewonderbars.com
+[Ruby]: https://ruby-lang.org
+[PostgreSQL]: https://postgresql.org
