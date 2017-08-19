@@ -18,8 +18,8 @@ require 'rails/test_unit/railtie'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Waxpoetic
-  # Web application powering waxpoeticrecords.com
+module Mindbrain
+  # Web application powering mindbrainmusic.com
   class Application < Rails::Application
     # Cosmetic name of this application
     config.name = 'Wax Poetic Records API'
@@ -38,7 +38,7 @@ module Waxpoetic
     # A list of allowed origin sites that can access the API data in
     # their web applications.
     config.sites = %w(
-      https://*.waxpoeticrecords.com
+      https://*.mindbrainmusic.com
       https://thewonderbars.com
       https://rndnbass.com
     )

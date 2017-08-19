@@ -21,8 +21,8 @@ proceeding.
 Clone this repository:
 
 ```bash
-$ git clone https://github.com/waxpoetic/api.git waxpoetic-api
-$ cd waxpoetic-api
+$ git clone https://github.com/mindbrain/api.git mindbrain-api
+$ cd mindbrain-api
 ```
 
 Install services:
@@ -42,7 +42,7 @@ $ ./bin/rails server
 Make requests to <http://localhost:3000/artists.json>. Here's what gets returned:
 
 ```json
-{"data":[{"id": 1,"attributes":{"name":"Sample Artist","bio":"Sample Bio","photo":"https://cdn.waxpoeticrecords.com/...","createdAt": "<DATE>","updatedAt": "<DATE>"}}]}
+{"data":[{"id": 1,"attributes":{"name":"Sample Artist","bio":"Sample Bio","photo":"https://cdn.mindbrainmusic.com/...","createdAt": "<DATE>","updatedAt": "<DATE>"}}]}
 ```
 
 To view the admin panel, log in to <http://localhost:3000/admin> with
@@ -59,7 +59,7 @@ You can also run RuboCop to assure you don't have any style failures:
 
     rails lint
 
-[the catalog site]: https://waxpoeticrecords.com
+[the catalog site]: https://mindbrainmusic.com
 [sites for individual artists]: https://thewonderbars.com
 [Ruby]: https://ruby-lang.org
 [PostgreSQL]: https://postgresql.org

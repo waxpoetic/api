@@ -54,7 +54,7 @@ Rails.application.configure do
 
   # Use Sidekiq as a backend for ActiveJob
   config.active_job.queue_adapter     = :sidekiq
-  config.active_job.queue_name_prefix = "waxpoetic_#{Rails.env}"
+  config.active_job.queue_name_prefix = "mindbrain_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

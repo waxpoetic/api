@@ -5,11 +5,11 @@ default: &default
 
 development:
   <<: *default
-  database: waxpoetic_development
+  database: mindbrain_development
 
 test:
   <<: *default
-  database: waxpoetic_test
+  database: mindbrain_test
 
 production:
   <<: *default
