@@ -9,8 +9,7 @@ end
 
 gem 'active_model_serializers'
 gem 'controller_resources'
-gem 'dragonfly'
-gem 'ember-cli-rails'
+gem 'activestorage'
 gem 'halt'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -23,6 +22,7 @@ gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
 gem 'bcrypt'
 gem 'apipie-rails'
 gem 'maruku'
+gem 'webpacker'
 
 group :development, :test do
   gem 'pry-byebug', platform: :mri

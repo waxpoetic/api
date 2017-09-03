@@ -28,5 +28,5 @@ class Track < ApplicationRecord
 
   scope :by_number, -> { order :number }
 
-  dragonfly_accessor :preview
+  has_one_attached :preview
 end

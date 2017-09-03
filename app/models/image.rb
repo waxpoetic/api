@@ -28,7 +28,7 @@ class Image < ApplicationRecord
 
   validates :position, presence: true, numericality: true
 
-  dragonfly_accessor :file
+  has_one_attached :file
 
   def method_missing(method, *arguments)
     return super unless respond_to? method
