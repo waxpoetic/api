@@ -24,4 +24,8 @@ class Domain
   def self.find(name)
     all.find { |domain| domain.name == name } || raise(NotFound, name)
   end
+
+  def ==(other)
+    id == other&.id
+  end
 end

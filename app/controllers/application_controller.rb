@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   PROTECTED_ACTIONS = %i(create update destroy).freeze
 
-  halt ActiveRecord::RecordNotFound, Domain::NotFound, with: :not_found
+  halt ActiveRecord::RecordNotFound, with: :not_found
   halt Pundit::Error, with: :unauthorized
   halt LoginError, with: :forbidden
 
