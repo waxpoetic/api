@@ -11,7 +11,8 @@ require 'action_controller/railtie'
 require 'action_mailer/railtie'
 require 'action_view/railtie'
 require 'action_cable/engine'
-# require "sprockets/railtie"
+require "sprockets/railtie"
+require 'active_storage/railtie'
 require 'rails/test_unit/railtie'
 
 # Require the gems listed in Gemfile, including any gems
@@ -34,5 +35,8 @@ module Mindbrain
 
     # All domains that this application serves JS apps for.
     config.domains = config_for(:domains)
+
+    # Default to local file storage service.
+    config.active_storage.service = :local
   end
 end
