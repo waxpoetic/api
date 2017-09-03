@@ -42,5 +42,8 @@ module Mindbrain
       https://thewonderbars.com
       https://rndnbass.com
     )
+
+    # Use the :local service if nothing else is configured.
+    config.active_storage.service ||= :local
   end
 end

@@ -80,4 +80,7 @@ Rails.application.configure do
 
   # Read encrypted secret keys with $RAILS_MASTER_KEY
   config.read_encrypted_secrets = true
+
+  # Use the S3 store in production
+  config.active_storage.service = :s3
 end
