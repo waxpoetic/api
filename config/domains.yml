@@ -1,0 +1,14 @@
+development:
+  catalog: catalog.mindbrain.dev
+  wonderbars: wonderbars.mindbrain.dev
+  rnd: rnd.mindbrain.dev
+
+test:
+  catalog: catalog.test.host
+  wonderbars: wonderbars.test.host
+  rnd: rnd.test.host
+
+production:
+  catalog: mindbrainmusic.com
+  wonderbars: thewonderbars.com
+  rnd: rndnbass.com

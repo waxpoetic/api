@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   resources :artists
   resources :images
 
-  root to: redirect('/docs')
+  root to: 'application#index'
 end

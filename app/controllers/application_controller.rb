@@ -1,29 +1,27 @@
 # frozen_string_literal: true
 
 # API control.
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   include ControllerResources
   include Halt
-  include ActionController::MimeResponds
 
   PROTECTED_ACTIONS = %i(create update destroy).freeze
 
-  halt ActiveRecord::RecordNotFound, with: :not_found
+  halt ActiveRecord::RecordNotFound, Domain::NotFound, with: :not_found
   halt Pundit::Error, with: :unauthorized
   halt LoginError, with: :forbidden
 
   attr_accessor :current_user
 
   before_action :authenticate_user!, if: :action_protected?
-  before_action :force_json
 
   respond_to :json
 
-  protected
-
-  def force_json
-    request.format = :json
+  def index
+    @domain = Domain.find(request.host)
   end
+
+  protected
 
   def action_protected?
     PROTECTED_ACTIONS.include? params[:action]

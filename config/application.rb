@@ -27,23 +27,12 @@ module Mindbrain
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    # config.api_only = true
+    config.api_only = true
 
     # Version of the API
     config.api_version = '1.0'
 
-    # Configure the CDN domain used by uploaded files.
-    config.cdn_domain_name = "https://files.#{secrets.domain_name}"
-
-    # A list of allowed origin sites that can access the API data in
-    # their web applications.
-    config.sites = %w(
-      https://*.mindbrainmusic.com
-      https://thewonderbars.com
-      https://rndnbass.com
-    )
-
-    # Use the :local service if nothing else is configured.
-    config.active_storage.service ||= :local
+    # All domains that this application serves JS apps for.
+    config.domains = config_for(:domains)
   end
 end
